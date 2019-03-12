@@ -79,7 +79,7 @@ for name in ${filenames[@]}; do
     bin_path="_release/bin/$name"
 
     # Upload file
-    url=$(gdrive upload --share $bin_path | awk '/https/ {print $7}')
+    url=$(gdrive upload --parent 1_oU0U1ZZMQ2ecJB0Mr57v36cYmugBIZx --share $bin_path | awk '/https/ {print $7}')
 
     # Shasum
     sha="$(shasum -b $bin_path | awk '{print $1}')"
