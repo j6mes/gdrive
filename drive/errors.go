@@ -9,7 +9,7 @@ import (
 const MaxErrorRetries = 5
 
 func isBackendOrRateLimitError(err error) bool {
-	return isBackendError(err) || isRateLimitError(err)
+	return isBackendError(err) || isRateLimitError(err) || isTimeoutError(err)
 }
 
 func isBackendError(err error) bool {
