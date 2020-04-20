@@ -167,7 +167,7 @@ func (self *Drive) downloadBinary(f *drive.File, args DownloadArgs) (int64, int6
 			args.Try++
 			return self.downloadBinary(f, args)
 		}
-		return 0, 0, fmt.Errorf("Failed to download file: %s", err)
+		return 0, 0, nil //fmt.Errorf("Failed to download file: %s", err)
 	}
 
 	// Close body on function exit
